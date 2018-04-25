@@ -3,9 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Karen%20Velasco/Desktop/Proyectos%20POO/Tareas/Encriptador/src/Main.java</file>
-            <file>file:/C:/Users/Karen%20Velasco/Desktop/Proyectos%20POO/Tareas/Encriptador/src/Controller/Encriptador.java</file>
-            <file>file:/C:/Users/Karen%20Velasco/Desktop/Proyectos%20POO/Tareas/Encriptador/src/Model/Archivo.java</file>
+            <file>file:/home/karen/Documents/POO/Encriptador/src/Utilidades/FileChooser.java</file>
+            <file>file:/home/karen/Documents/POO/Encriptador/src/GUI/PanelPrincipal.java</file>
+            <file>file:/home/karen/Documents/POO/Encriptador/src/Main.java</file>
+            <file>file:/home/karen/Documents/POO/Encriptador/src/Controller/Encriptador.java</file>
+            <file>file:/home/karen/Documents/POO/Encriptador/src/Utilidades/Archivo.java</file>
+            <file>file:/home/karen/Documents/POO/Encriptador/src/GUI/PasswordDialog.java</file>
+            <file>file:/home/karen/Documents/POO/Encriptador/src/GUI/MainFrame.java</file>
         </group>
     </open-files>
 </project-private>

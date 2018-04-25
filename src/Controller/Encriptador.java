@@ -1,7 +1,8 @@
 package Controller;
 
 
-import Model.Archivo;
+import Utilidades.Archivo;
+import Utilidades.KeyException;
 import java.io.IOException;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -17,19 +18,19 @@ import java.io.FileNotFoundException;
  */
 //
 public class Encriptador {
-    public void EncriptarArchivo(String path, String key) throws IOException, FileNotFoundException, ClassNotFoundException {
-        Archivo archivo = new Archivo();
+    public void EncriptarArchivo(String path, String key) throws IOException, FileNotFoundException, ClassNotFoundException, KeyException {
+        //Archivo archivo = new Archivo();
         
 //        String path = "C:\\Users\\Karen Velasco\\Desktop\\Proyectos POO\\Tareas\\SopaDeLetras\\INPUT.txt" ; //Java no crea directorios
-
-        archivo.encriptarArchivo(path, key);
+        
+        
       
 //        String path2 = "C:\\Users\\Karen Velasco\\Desktop\\Proyectos POO\\Tareas\\SopaDeLetras\\Encriptacion JAVA\\INPUT.txt"; //Java no crea directorios
         
     }
     
     public void DesencriptarArchivo(String path, String key) throws IOException, FileNotFoundException, ClassNotFoundException{
-        Archivo archivo = new Archivo();
-        archivo.desencriptarArchivo(path, key);
+        //Archivo archivo = new Archivo();
+        Archivo.desencriptarArchivo(path, key);
     }
 }

@@ -1,4 +1,4 @@
-package Model;
+package Utilidades;
 
 
 import java.io.File;
@@ -20,7 +20,7 @@ import java.io.IOException;
 public class Archivo {
     //File file;
     
-    public String leerArchivo(String path) throws FileNotFoundException, IOException, ClassNotFoundException{
+    public static String leerArchivo(String path) throws FileNotFoundException, IOException, ClassNotFoundException{
         
         File file = new File(path);
                 
@@ -44,7 +44,7 @@ public class Archivo {
         
     }
     
-    public File escribirArchivo(String path, String texto) throws FileNotFoundException, IOException{
+    public static File escribirArchivo(String path, String texto) throws FileNotFoundException, IOException{
          
         System.out.println("Funcion escribir archivo recibe una cadena de texto");
         File file = new File(path);
@@ -61,9 +61,9 @@ public class Archivo {
    
     
   
-        public void encriptarArchivo(String path,String key) throws FileNotFoundException, IOException, ClassNotFoundException{
+        public static void encriptarArchivo(String path,String key) throws FileNotFoundException, IOException, ClassNotFoundException, KeyException{
         //debe operar dentro del archivo
-        
+            
         System.out.println("Funcion encriptar ");
         //Transformacion de la clavee
         char[] clave = key.toCharArray();
@@ -71,7 +71,7 @@ public class Archivo {
         File file = new File(path);
         FileReader reader = new FileReader(file);
    
-        String contenido = this.leerArchivo(file.getAbsolutePath());
+        String contenido = Archivo.leerArchivo(file.getAbsolutePath());
         char[] cadena = contenido.toCharArray();
     
         System.out.println("Caracteres del archivo = "+ cadena.length);
@@ -107,26 +107,30 @@ public class Archivo {
         }
         
         System.out.println(texto);
-            
-        String newPath = this.crearDirectorio(path, "Encriptacion JAVA");
         
-        this.escribirArchivo(newPath, texto);
+        
+        String newPath = Archivo.crearDirectorio(path, "Encriptacion JAVA");
+        
+        Archivo.escribirArchivo(newPath, texto);
         
         
     }
         
-    public String crearDirectorio(String path, String dirName){//El path es el del archivo
-       String keys = "\\\\";
+    public static String crearDirectorio(String path, String dirName){//El path es el del archivo
+       String keys = "/";
+       
        String[] tokens = path.split(keys);
+       
        for(int i=0;i<tokens.length;i++){
            System.out.println(tokens[i]);
        }
        
        String pathname = "";
-       for(int i=0; i<tokens.length-1;i++){
+       
+       for(int i=0; i < (tokens.length-1) ;i++){
+           pathname = pathname.concat("/");
            pathname = pathname.concat(tokens[i]);
-           pathname = pathname.concat("\\");
-       }
+           }
         System.out.println(pathname);
                
        String directory = pathname + dirName;
@@ -143,7 +147,7 @@ public class Archivo {
        
     }
     
-    public void desencriptarArchivo(String path,String key) throws FileNotFoundException, IOException, ClassNotFoundException{
+    public static void desencriptarArchivo(String path,String key) throws FileNotFoundException, IOException, ClassNotFoundException{
         //debe operar dentro del archivo
         
         System.out.println("Funcion desencriptar ");
@@ -153,7 +157,7 @@ public class Archivo {
         File file = new File(path);
         FileReader reader = new FileReader(file);
    
-        String contenido = this.leerArchivo(file.getAbsolutePath());
+        String contenido = Archivo.leerArchivo(file.getAbsolutePath());
         char[] cadena = contenido.toCharArray();
         
         System.out.println("Caracteres del archivo = "+ cadena.length);
@@ -190,9 +194,9 @@ public class Archivo {
         
         System.out.println(texto);
             
-        String newPath = this.crearDirectorio(path, "Desencriptacion JAVA");
+        String newPath = Archivo.crearDirectorio(path, "Desencriptacion JAVA");
         
-        this.escribirArchivo(newPath, texto);
+        Archivo.escribirArchivo(newPath, texto);
         
     }
 }
