@@ -5,10 +5,14 @@
  */
 package GUI;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 /**
  *
  * @author Karen Velasco
  */
 public interface PanelPrincipalListener {
-    public void onBtnClick(Integer n);
+    public void onBtnClick(Integer n); //To change body of generated methods, choose Tools | Templates.
+;
 }

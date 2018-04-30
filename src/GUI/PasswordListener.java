@@ -5,6 +5,9 @@
  */
 package GUI;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 /**
  *
  * @author Karen Velasco
